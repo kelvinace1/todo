@@ -1,0 +1,21 @@
+{% extends "ad/base.html" %}
+{%block content%}
+
+<div class="content-section">
+    <form method = "POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>JOIN TODAY</legend>
+            {{form}}
+        </fieldset>
+        <div>
+            <button type="submit">Sign up</button>        
+        </div>
+    </form>
+    <div>
+        <p><small>dont have an account</small></p>
+    </div>
+</div>
+
+
+{%endblock%}

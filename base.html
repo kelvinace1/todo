@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div>
+        <nav class="nav-wrapper green">
+            <ul>
+                <li class="brand-logo red-text darken 4 flow-text"></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#">home</a></li>
+                <li><a href="">projects</a></li>
+                <li><a href="#">blog</a></li>
+                <!--<li><a href="#">latest</a></li>-->
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="{{message.tags}}">
+            {{messages}}
+        </div>
+        {% endfor%}
+        {% endif %}
+        {%block content%}
+        {%endblock content%}
+       
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script> 
+</body>
+</html>

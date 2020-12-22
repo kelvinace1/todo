@@ -1,0 +1,28 @@
+{%extends "ad/base.html" %}
+{% block content %}
+<h1> hello {{username}}</h1>
+<ul>
+{% for post in posts %}
+<li> <p class="flow-text green text">{{post.content}}</p>
+<form action="/delete/{{post.id}}/" method="POST"
+    style = "display:inline";> 
+    {% csrf_token%}
+    <input type="submit" value="delete"/>
+</form>
+</li>
+
+{% endfor%}
+</ul>
+
+<form action="/todo/" method="POST">
+    {% csrf_token%}
+     <input type="text" name="content"/>
+    <input type="submit" value="add new"/>
+</form>
+
+
+
+
+
+
+{%endblock content %}
